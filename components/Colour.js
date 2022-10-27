@@ -3,7 +3,7 @@ import chroma from "chroma-js";
 const Colour = ({ colourCode, handleLock, position, icon }) => {
   return (
     <div
-      className={`relative flex h-1/5 w-screen flex-row justify-around md:h-screen md:flex-col ${
+      className={`relative flex h-full w-full flex-row justify-around md:flex-col ${
         chroma(colourCode).luminance() <= 0.5 ? "text-white" : "text-black"
       }`}
       style={{ background: colourCode }}
