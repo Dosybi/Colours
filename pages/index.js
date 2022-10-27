@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import chroma from "chroma-js";
 
 import Colour from "../components/Colour";
+import Controls from "../components/Controls";
 
 export default function Home() {
   const [colour, setColour] = useState([]);
@@ -10,6 +11,10 @@ export default function Home() {
   const [indexes, setIndexes] = useState([]);
   const numberOfColours = 5;
   let palette = [];
+
+  const generatePalette = () => {
+    setColour(getColours());
+  };
 
   const getColours = () => {
     palette = [];
@@ -32,7 +37,6 @@ export default function Home() {
     }
     column.classList.toggle("fa-lock");
     column.classList.toggle("fa-lock-open");
-    console.log(lockedColours);
   };
 
   useEffect(() => {
@@ -71,6 +75,7 @@ export default function Home() {
             />
           );
         })}
+        <Controls handlePress={generatePalette} />
       </div>
     </div>
   );
