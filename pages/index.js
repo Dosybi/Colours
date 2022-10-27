@@ -63,7 +63,7 @@ export default function Home() {
         />
       </Head>
 
-      <div className="flex h-screen flex-col md:flex-row">
+      <div className="fullscreen flex flex-col md:flex-row">
         {colour.map((col, index) => {
           return (
             <Colour
